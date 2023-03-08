@@ -12,7 +12,7 @@ import ToggledSourceController from './ToggledSourceController/ToggledSourceCont
 import InputFocus from "./InputFocus/InputFocus"
 import GoogleAuthBtn from "./GoogleAuthButton/GoogleAuthBtn"
 import AccountModal from "./AcountModal/AccountModal"
-import NavBar from "./NavBar/NavBar"
+import NavBar from "./Navbar/NavBar"
 
 export {
   Navigation,
