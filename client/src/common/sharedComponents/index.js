@@ -1,5 +1,4 @@
 import AfterAuthNav from "./Navbar/AfterAuthNav";
-import Navigation from "./Navigation/Navigation";
 import BeforeAuth_Nav from "./Navbar/BeforeAuth_Nav";
 import Logo from './Logo/Logo'
 import Button from "./Button/Button"
@@ -13,9 +12,9 @@ import InputFocus from "./InputFocus/InputFocus"
 import GoogleAuthBtn from "./GoogleAuthButton/GoogleAuthBtn"
 import AccountModal from "./AcountModal/AccountModal"
 import NavBar from "./Navbar/NavBar"
+import ProfilePic from './Profile/ProfilePic'
 
 export {
-  Navigation,
   AfterAuthNav,
   BeforeAuth_Nav,
   Logo,
@@ -24,6 +23,7 @@ export {
   EventCategory,
   EventsDirectory,
   EventsButtons,
+  ProfilePic,
   CartIcon,
   ToggledSourceController,
   InputFocus,

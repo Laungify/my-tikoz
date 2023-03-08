@@ -8,6 +8,7 @@ import EventSafariRally from '../assets/safariRally.webp'
 import hikingEvent from '../assets/hikingEvent.jpg';
 import marathonEvent from '../assets/marathon.jpg';
 import trolley from '../assets/trolley.png';
+import profile from '../assets/profile.png';
 
 
 export default {
@@ -20,5 +21,6 @@ export default {
   EventSafariRally,
   hikingEvent,
   marathonEvent,
-  trolley
+  trolley,
+  profile
   };

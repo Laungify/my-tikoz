@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 
 
 import images from "../../../constants";
-import { Button, CartIcon, ToggledSourceController, AccountModal } from "../";
+import { Button, CartIcon, ToggledSourceController, ProfilePic } from "../";
 
 import { useToggleComponent } from '../../../common/customHooks';
 
@@ -59,6 +59,28 @@ const NavBar = () => {
                 <div className="navbar__cta">
                     <button className="navbar__signin">Sign in</button>
                     <button className="navbar__register">Register</button>
+                </div>
+                <div className="cart__container">
+                    <ToggledSourceController
+                        toggleVal={toggleValCart}
+                        toggleSource={toggleSourceCart}
+                        setToggleVal={setToggleValCart}
+                        setToggleSource={setToggleSourceModal}
+                    >
+                        <CartIcon toggle={() => handleSourceChange(toggleSourceCart)} />
+                    </ToggledSourceController> <p>View Cart</p>
+                </div>
+
+                <div className="cart__container">
+                    <ToggledSourceController
+                        toggleVal={toggleValModal}
+                        toggleSource={toggleSourceModal}
+                        setToggleVal={setToggleValModal}
+                        setToggleSource={setToggleSourceCart}
+                    >
+                        <ProfilePic toggle={() => handleSourceChange(toggleSourceCart)} />
+                    </ToggledSourceController><p>Account</p>
+
                 </div>
             </div>
         </div>
