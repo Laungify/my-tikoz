@@ -14,7 +14,7 @@ import {
 } from "./features/selectors";
 
 import AppRoutes from "./routes/routes";
-import { Cart, Seats } from "./routes/pages";
+import { Cart } from "./routes/pages";
 
 import "./App.scss";
 const App = () => {

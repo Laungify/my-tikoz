@@ -1,5 +1,7 @@
+import React, {Fragment} from 'react'
+import { Auth, Admin, Contacts, About, DisplayActivities, AllEvents, SingleEvent, NoMatch } from "./pages";
+import { NavBar } from "../common/sharedComponents"
 
-import {Auth,Admin,Contacts,About,DisplayActivities,AllEvents,SingleEvent,NoMatch} from "./pages";
 
 
 // contains all routes exported as a component at the App level to be able to see browserHistory, links, etc
@@ -11,6 +13,8 @@ import {
 
 const AppRoutes = () => {
   return (
+    <Fragment>
+      <NavBar />
       <Routes>
         <Route path="/auth" element={<Auth />} />
         <Route path="/about" element={<About />} />
@@ -21,6 +25,8 @@ const AppRoutes = () => {
         <Route path="/events/:id" element={<SingleEvent />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
+    </Fragment>
+
   );
 };
 

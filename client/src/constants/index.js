@@ -1,4 +1,4 @@
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo.jpeg';
 import bed from '../assets/bed.jpg';
 import food from '../assets/food.jpg';
 import hiking from '../assets/hiking.jpg';

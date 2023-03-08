@@ -1,5 +1,3 @@
-import AfterAuthNav from "./Navbar/AfterAuthNav";
-import BeforeAuth_Nav from "./Navbar/BeforeAuth_Nav";
 import Logo from './Logo/Logo'
 import Button from "./Button/Button"
 import Footer from "./Footer/Footer"
@@ -13,10 +11,9 @@ import GoogleAuthBtn from "./GoogleAuthButton/GoogleAuthBtn"
 import AccountModal from "./AcountModal/AccountModal"
 import NavBar from "./Navbar/NavBar"
 import ProfilePic from './Profile/ProfilePic'
+import HomeNav from './Navbar/HomeNav'
 
 export {
-  AfterAuthNav,
-  BeforeAuth_Nav,
   Logo,
   Button,
   Footer,
@@ -30,4 +27,5 @@ export {
   GoogleAuthBtn,
   AccountModal,
   NavBar,
+  HomeNav,
 };

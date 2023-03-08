@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { useSelector } from "react-redux";
 
-import { NavBar, Footer } from "../../../common/sharedComponents";
+import { Footer } from "../../../common/sharedComponents";
 import { Signin, Signup } from "../index";
 
 import { scrollabeleHook, useHrOnSmallScreens } from "../../../common/customHooks";
@@ -35,7 +35,6 @@ const Auth = () => {
 
   return (
     <>
-      <NavBar />
       <div className="home__container">
         <div className="home__images-wrapper">
           <div className="home__images">

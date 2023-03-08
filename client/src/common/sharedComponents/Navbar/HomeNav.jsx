@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 
 import images from '../../../constants'
 
-import './BeforeAuth_Nav.scss'
-const BeforeAuth_Nav = () => {
+import './HomeNav.scss'
+const HomeNav = () => {
   return (
     <motion.div>
     <div className="app__bg-img">
@@ -15,4 +15,4 @@ const BeforeAuth_Nav = () => {
   )
 }
 
-export default BeforeAuth_Nav
+export default HomeNav

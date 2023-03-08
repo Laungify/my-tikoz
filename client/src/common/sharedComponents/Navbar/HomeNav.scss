@@ -1,0 +1,21 @@
+.app__bg-img {
+  img {
+    width: 100%;
+    position: fixed;
+    height: 153px;
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .app__bg-img {
+    display: flex;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}

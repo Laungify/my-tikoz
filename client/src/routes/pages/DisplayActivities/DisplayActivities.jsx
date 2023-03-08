@@ -3,18 +3,12 @@ import { motion as m } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-  BeforeAuth_Nav,
   ToggledSourceController,
   Button,
   Footer,
+  HomeNav,
 } from "../../../common/sharedComponents";
 import { ModalOverlay } from "../";
-
-// import {
-//   toggleComponentBooleanValue,
-//   componentName,
-//   cartSelector,
-// } from "../../../features/selectors";
 
 import {useToggleComponent} from '../../../common/customHooks';
 
@@ -28,29 +22,29 @@ const DisplayActivities = () => {
 
   return (
     <>
-      <BeforeAuth_Nav />
+      <HomeNav />
       <div className="dispaly__activities-wrapper">
         <div className="dispaly__activities-title">
           <m.h1
             initial={{ opacity: 1, color: "#000" }}
             animate={{
               opacity: 1,
-              color: "#12e952",
+              color: "#2d312e",
               transition: { duration: 1 },
             }}
-            exit={{ opacity: 0, color: "#000", transition: { duration: 1 } }}
+            exit={{ opacity: 0, color: "#494747", transition: { duration: 1 } }}
             style={{ transitionProperty: "color" }}
           >
             WELCOME TO TIKO ZANGU
           </m.h1>
           <m.h1
-            initial={{ opacity: 0, color: "#000" }}
+            initial={{ opacity: 0, color: "#4b4848" }}
             animate={{
               opacity: 1,
-              color: "#e91212",
+              color: "#2b2626",
               transition: { duration: 2 },
             }}
-            exit={{ opacity: 0, color: "#000", transition: { duration: 1 } }}
+            exit={{ opacity: 0, color: "#5c5656", transition: { duration: 1 } }}
             style={{ transitionProperty: "color" }}
             className="experience"
           >

@@ -56,10 +56,11 @@ const NavBar = () => {
                     <li className="navbar__item"><a href="#" className="navbar__link">Services</a></li>
                     <li className="navbar__item"><a href="#" className="navbar__link">Contact</a></li>
                 </ul>
-                <div className="navbar__cta">
+                {/* <div className="navbar__cta">
                     <button className="navbar__signin">Sign in</button>
                     <button className="navbar__register">Register</button>
-                </div>
+                </div> */}
+                <div className="cart__container-wrapper">
                 <div className="cart__container">
                     <ToggledSourceController
                         toggleVal={toggleValCart}
@@ -82,6 +83,8 @@ const NavBar = () => {
                     </ToggledSourceController><p>Account</p>
 
                 </div>
+                </div>
+
             </div>
         </div>
 
