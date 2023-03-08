@@ -1,0 +1,211 @@
+// Navbar style
+
+.navbar {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 150px;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em 0 2em;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .nav__list-items {
+    display: flex;
+    list-style: none;
+    gap: 65px;
+  }
+  .button__wrapper-activity {
+    color: #000000;
+    border-radius: 9px;
+    width: 173px;
+    height: 50px;
+  }
+  .blue {
+    background-color: #22c3e7;
+  }
+  .red {
+    background-color: #f02b2b;
+  }
+  .yellow {
+    background-color: #e8b604;
+  }
+  .green {
+    background-color: #46ea0d;
+  }
+
+  &__logo {
+    img {
+      max-height: 150px;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &-icon {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #333;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 6px;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    & .navbar__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      & .navbar__item {
+        margin-right: 1rem;
+      }
+
+      & .navbar__link {
+        display: block;
+        padding: 0.5rem;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+    }
+
+    &__cta {
+      display: flex;
+      margin-left: auto;
+
+      & .navbar__signin,
+      & .navbar__register {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #fff;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // Navbar styles for mobile
+  .navbar {
+    flex-direction: column;
+
+    &__toggle {
+      display: block;
+      margin-left: auto;
+    }
+
+    &__menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+
+      & .navbar__list {
+        flex-direction: column;
+
+        & .navbar__item {
+          margin-right: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        & .navbar__link {
+          display: block;
+          padding: 0.5rem 0;
+          border-top: 1px solid #333;
+
+          &:first-of-type {
+            border-top: none;
+          }
+        }
+      }
+
+      &__cta {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 1rem;
+
+        & .navbar__signin,
+        & .navbar__register {
+          display: block;
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    // Toggle button styles
+    &__toggle {
+      &-icon {
+        transform: rotate(0deg);
+
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+
+      &.active {
+        &__toggle-icon {
+          transform: rotate(90deg);
+
+          &::before,
+          &::after {
+            top: 0;
+          }
+        }
+
+        & ~ .navbar__menu {
+          display: block;
+        }
+      }
+    }
+  }
+}

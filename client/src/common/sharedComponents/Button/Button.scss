@@ -1,0 +1,22 @@
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kameron";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+
+  &:hover {
+    background-color: rgb(39, 64, 202);
+    color: rgb(224, 206, 233);
+    border: 1px solid black;
+  }
+  &.auth {
+
+  }
+}

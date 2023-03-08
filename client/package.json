@@ -1,0 +1,46 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "proxy": "http://localhost:3200/",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "dotenv": "^16.0.3",
+    "firebase": "^9.17.1",
+    "formik": "^2.2.9",
+    "framer-motion": "^8.5.0",
+    "i": "^0.3.7",
+    "npm": "^9.5.0",
+    "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
+    "react-dom": "^18.2.0",
+    "react-google-button": "^0.7.2",
+    "react-google-login": "^5.2.2",
+    "react-google-signin": "^1.0.3",
+    "react-hot-loader": "^4.13.1",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.7.1",
+    "react-phone-input-2": "^2.15.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.7.0",
+    "react-toastify": "^9.1.1",
+    "react-use": "^17.4.0",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.57.1",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "@welldone-software/why-did-you-render": "^7.0.1",
+    "vite": "^4.0.0"
+  }
+}

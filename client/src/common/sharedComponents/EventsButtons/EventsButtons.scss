@@ -1,0 +1,31 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0px 15px 40px;
+
+  .button__wrapper-events {
+    display: flex;
+    width: 246px;
+    height: 38px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    color: #fdf1f1;
+    background: #110303;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    .button__wrapper-events {
+      width: 270px;
+    }
+  }
+}

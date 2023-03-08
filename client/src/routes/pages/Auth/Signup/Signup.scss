@@ -1,0 +1,119 @@
+.signin__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1,
+  h3 {
+    text-align: center;
+    line-height: 1.5;
+  }
+  .name__wrapper {
+    display: flex;
+    height: 50px;
+    width: 500px;
+
+    input {
+      height: 50px;
+      width: 500px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      border-radius: 12px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      -ms-border-radius: 12px;
+      -o-border-radius: 12px;
+    }
+  }
+  input[type="checkbox"] {
+    width: auto;
+    height: auto;
+  }
+
+  .error_validators {
+    margin-top: 20px;
+    width: 500px;
+    justify-content: space-between;
+    display: flex;
+    color: red;
+  }
+  .terms_conditions {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .p_text-terms {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .button__wrapper-activity {
+    height: 50px;
+    width: 500px;
+    color: #fff3f3;
+    margin: 8px 0 15px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 12px;
+    border-bottom: 2px solid #ccc;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+  }
+  .brown {
+    background-color: #120404;
+  }
+  .reset_or-register {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    .reset {
+      color: blue;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .signin__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+
+    .name__wrapper {
+      display: flex;
+      height: 50px;
+      width: 380px;
+  
+      input {
+        height: 50px;
+        width: 380px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+      }
+    }
+
+    button,.terms_conditions{
+      width: 380px;
+    }
+    .reset_or-register {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+
+      .reset {
+        color: blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.blinking-cursor {
+    animation: blinker 1.5s steps(2) infinite;
+    -webkit-animation: blinker 1.5s steps(2) infinite;
+}
+  
+  @keyframes blinker {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+ 
