@@ -47,12 +47,14 @@ export const signInWithGoogleRedirect = () =>
 
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth,  additionalInformation = {}) => {
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInformation = {}
+) => {
   return await setDoc(doc(db, "users", userAuth), {
     ...additionalInformation,
   });
 };
-
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
@@ -68,6 +70,50 @@ export const signOutUser = async () => signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+//   displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
+// }).then(() => {
+//   // Profile updated!
+//   // ...
+// }).catch((error) => {
+//   // An error occurred
+//   // ...
+// });
+
+export const updateUserProfile = async (displayName) => {
+  return await updateProfile(auth.currentUser, {
+    displayName,
+  });
+};
+
+// callback of authStateChange
+//   onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       setAuth(true);
+//       console.log(user);
+//     } else {
+//       setAuth(false);
+//       console.log(user);
+//     }
+//   });
+// };
+
+// google sign-in
+const googleSignIn = () => {
+  const provider = new GoogleAuthProvider();
+
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result);
+      console.log(result.user);
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      setError(error.code);
+      console.log(error.code);
+    });
+};
 
 // Firebase storage reference
 export const storage = getStorage(app);

@@ -140,82 +140,24 @@
 @media screen and (max-width: 768px) {
   // Navbar styles for mobile
   .navbar {
-    flex-direction: column;
+    width: 100%;
+    flex-direction: row;
 
-    &__toggle {
-      display: block;
-      margin-left: auto;
-    }
-
-    &__menu {
-      display: none;
+    .nav__list-items {
+      display: flex;
       flex-direction: column;
-      width: 100%;
-
-      & .navbar__list {
-        flex-direction: column;
-
-        & .navbar__item {
-          margin-right: 0;
-          margin-bottom: 0.5rem;
-        }
-
-        & .navbar__link {
-          display: block;
-          padding: 0.5rem 0;
-          border-top: 1px solid #333;
-
-          &:first-of-type {
-            border-top: none;
-          }
-        }
-      }
-
-      &__cta {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-        margin-top: 1rem;
-
-        & .navbar__signin,
-        & .navbar__register {
-          display: block;
-          width: 100%;
-          margin-bottom: 0.5rem;
-        }
-      }
+      gap: 5px;
     }
-
-    // Toggle button styles
-    &__toggle {
-      &-icon {
-        transform: rotate(0deg);
-
-        &::before {
-          transform: rotate(45deg);
-          top: 0;
-        }
-
-        &::after {
-          transform: rotate(-45deg);
-          top: 0;
-        }
-      }
-
-      &.active {
-        &__toggle-icon {
-          transform: rotate(90deg);
-
-          &::before,
-          &::after {
-            top: 0;
-          }
-        }
-
-        & ~ .navbar__menu {
-          display: block;
-        }
-      }
+    .button__wrapper-activity {
+      color: #000000;
+      border-radius: 9px;
+      width: 35px;
+      height: 30px;
     }
+    &__logo {
+      img {
+        max-height: 150px;
+      }
+    } 
   }
 }

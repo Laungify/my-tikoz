@@ -23,7 +23,7 @@ export const userSlice = createSlice({
 
 
 // selectors
-export const selectUser = (state) => state.user.user;
+export const selectUser = (state) => state.user;
 //   const posts = useSelector((state) => state.posts);
 
 export default userSlice;

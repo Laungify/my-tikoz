@@ -11,5 +11,5 @@ export {
     componentName,
     cartSelector,
     cartTotalItemSelector,
-    cartTotalPriceSelector
+    cartTotalPriceSelector,
 }
