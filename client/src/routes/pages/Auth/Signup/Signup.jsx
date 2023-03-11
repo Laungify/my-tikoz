@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
@@ -25,6 +25,9 @@ import {
 
 import "./Signup.scss";
 const Signup = () => {
+const [loading, setisloading] = useState(false)
+
+
   const dispatch = useDispatch();
   const initialValues = {
     firstname: "",
@@ -54,13 +57,15 @@ const Signup = () => {
     const userAuth = await createAuthUserWithEmailAndPassword(
       email,
       password
-    );
+    )
+    setisloading(true)
 
     const uid = userAuth.user.uid
 
     // Create a new document using the uid as the document id
     // or however else you want to use this
     await createUserDocumentFromAuth(uid, { displayName: displayName, email: email, phone: phone })
+    .then(setisloading(false))
       .then(() => { dispatch(setDisplayedComponent("signin"))})
       .catch((error) => {
         // if (error.code === "auth/email-already-in-use") {
@@ -84,6 +89,7 @@ const Signup = () => {
       <h3>CURATING YOUR BEST </h3>
       <h3>EXPERIENCES ALL UNDER ONE</h3>
       <h3> HUT</h3>
+      { loading ? <h3>Loading...</h3> : 
       <form onSubmit={formik.handleSubmit}>
         <div className="name__wrapper">
           <input
@@ -193,6 +199,7 @@ const Signup = () => {
         </div>
         <Toaster position="top-center" reverseOrder={true} />
       </form>
+}
       {/* <GoogleAuthBtn onClick="" /> */}
     </motion.div>
   );

@@ -19,6 +19,8 @@ import { Cart } from "./routes/pages";
 import "./App.scss";
 const App = () => {
   // make dispatched data global accross app 
+  // the cart, account modals can be accessed gloabally 
+  
   const dispatch = useDispatch();
 
   useEffect(() => {

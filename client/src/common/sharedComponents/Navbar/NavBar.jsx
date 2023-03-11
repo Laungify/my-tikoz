@@ -4,24 +4,22 @@ import { useSelector } from 'react-redux';
 
 
 import images from "../../../constants";
-import { Button, CartIcon, ToggledSourceController, ProfilePic } from "../";
+import { Button, CartIcon, ToggledSourceController, ProfilePic, AccountModal } from "../";
 
 import { useToggleComponent } from '../../../common/customHooks';
 
 import {
     selectUser
 } from "../../../features/slices/users/userSlice";
-import {logout} from "../../../features"
+import { logout } from "../../../features"
 
 import './NavBar.scss';
 const NavBar = () => {
-    const [toggleSourceModal, setToggleSourceModal, toggleValModal, setToggleValModal, checker] = useToggleComponent('accountModal', true);
+    const [toggleSourceAccountModal, setToggleSourceAccountModal, toggleValAccountModal, setToggleAccountValModal, checker] = useToggleComponent('accountModal', true);
     const [toggleSourceCart, setToggleSourceCart, toggleValCart, setToggleValCart] = useToggleComponent('cart', true);
 
-    const user = useSelector(selectUser)
     return (
         <div className="navbar">
-            {console.log(user)}
             <div className="navbar__logo">
                 <img className="app__navbar-logo" src={images.logo} alt="logo" />
             </div>
@@ -75,7 +73,7 @@ const NavBar = () => {
                             toggleVal={toggleValCart}
                             toggleSource={toggleSourceCart}
                             setToggleVal={setToggleValCart}
-                            setToggleSource={setToggleSourceModal}
+                            setToggleSource={setToggleSourceCart}
                         >
                             <CartIcon toggle={() => handleSourceChange(toggleSourceCart)} />
                         </ToggledSourceController> <p>View Cart</p>
@@ -83,18 +81,21 @@ const NavBar = () => {
 
                     <div className="cart__container">
                         <ToggledSourceController
-                            toggleVal={toggleValModal}
-                            toggleSource={toggleSourceModal}
-                            setToggleVal={setToggleValModal}
-                            setToggleSource={setToggleSourceCart}
+                            toggleVal={toggleValAccountModal}
+                            toggleSource={toggleSourceAccountModal}
+                            setToggleVal={setToggleAccountValModal}
+                            setToggleSource={setToggleSourceAccountModal}
                         >
-                            <ProfilePic toggle={() => handleSourceChange(toggleSourceCart)} />
+                            <ProfilePic toggle={() => handleSourceChange('accountModal')}
+                            />
                         </ToggledSourceController><p>Account</p>
 
                     </div>
                 </div>
 
             </div>
+            {/* {checker === true ? <AccountModal /> : " "} */}
+
         </div>
 
     )
