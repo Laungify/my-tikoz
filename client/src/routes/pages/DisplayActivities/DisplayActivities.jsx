@@ -6,9 +6,9 @@ import {
   ToggledSourceController,
   Button,
   Footer,
-  HomeNav,
 } from "../../../common/sharedComponents";
 import { ModalOverlay } from "../";
+
 
 import {useToggleComponent} from '../../../common/customHooks';
 
@@ -22,29 +22,28 @@ const DisplayActivities = () => {
 
   return (
     <>
-      <HomeNav />
       <div className="dispaly__activities-wrapper">
         <div className="dispaly__activities-title">
           <m.h1
             initial={{ opacity: 1, color: "#000" }}
             animate={{
               opacity: 1,
-              color: "#2d312e",
+              color: "#6ce08f",
               transition: { duration: 1 },
             }}
-            exit={{ opacity: 0, color: "#494747", transition: { duration: 1 } }}
+            exit={{ opacity: 0, color: "#000", transition: { duration: 1 } }}
             style={{ transitionProperty: "color" }}
           >
             WELCOME TO TIKO ZANGU
           </m.h1>
           <m.h1
-            initial={{ opacity: 0, color: "#4b4848" }}
+            initial={{ opacity: 0, color: "#000" }}
             animate={{
               opacity: 1,
-              color: "#2b2626",
+              color: "#0a0101",
               transition: { duration: 2 },
             }}
-            exit={{ opacity: 0, color: "#5c5656", transition: { duration: 1 } }}
+            exit={{ opacity: 0, color: "#c41515", transition: { duration: 1 } }}
             style={{ transitionProperty: "color" }}
             className="experience"
           >
@@ -70,7 +69,7 @@ const DisplayActivities = () => {
                   setToggleSource={setToggleSourceModal}
                 >
                   <Button
-                    toggle={() => handleSourceChange("activityModal")}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
@@ -96,7 +95,7 @@ const DisplayActivities = () => {
                   setToggleSource={setToggleSourceModal}
                 >
                   <Button
-                    toggle={() => handleSourceChange("activityModal")}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
@@ -124,7 +123,7 @@ const DisplayActivities = () => {
                   setToggleSource={setToggleSourceModal}
                 >
                   <Button
-                    toggle={() => handleSourceChange("activityModal")}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
@@ -149,7 +148,7 @@ const DisplayActivities = () => {
                  setToggleSource={setToggleSourceModal}
                 >
                   <Button
-                    toggle={() => handleSourceChange("activityModal")}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE

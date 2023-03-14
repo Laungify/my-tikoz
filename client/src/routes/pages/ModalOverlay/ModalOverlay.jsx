@@ -7,6 +7,7 @@ import { handleToggledComponent } from "../../../common/customHooks";
 
 import "./ModalOverlay.scss";
 const ModalOverlay = () => {
+  // move this to a reusablecomponent 
   const [toggleValue, setToggleValue] = useState(false);
   const [toggleSourceModal, setToggleSourceModal] = useState("activityModal");
   const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const ModalOverlay = () => {
     setToggleSourceModal(toggleSourceModal);
     handleToggledComponent(toggleSourceModal, toggleValue, dispatch);
   };
+    // move this to a reusablecomponent 
+
 
   const navigate = useNavigate();
   const routeToAuth_or_shop = (buttonType) => {

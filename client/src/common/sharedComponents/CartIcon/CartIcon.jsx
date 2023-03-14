@@ -2,16 +2,16 @@ import React from "react";
 
 import images from "../../../constants";
 import "./CartIcon.scss";
-const CartIcon = ({toggle}) => {
+const CartIcon = ({onClick}) => {
 
   return (
     <img
       className="cart__icon"
       src={images.trolley}
       alt="trolley"
-      onClick={toggle}
+      onClick={onClick}
     />
   );
 };
 
-export default React.memo(CartIcon);
+export default CartIcon;

@@ -26,7 +26,7 @@ const ToggledSourceController = ({
   return (
     <>
       {React.cloneElement(children, {
-        toggle: handleSourceChange,
+        onClick: handleSourceChange,
       })}
     </>
   );

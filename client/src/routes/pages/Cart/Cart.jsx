@@ -10,7 +10,8 @@ import {
   AiOutlineDelete,
 } from "react-icons/ai";
 
-import { handleToggledComponent } from "../../../common/customHooks";
+import { useToggleComponent } from "../../../common/customHooks";
+import { ToggledSourceController } from "../../../common/sharedComponents"
 import {
   cartSelector,
   cartTotalItemSelector,
@@ -26,18 +27,9 @@ import {
 
 import "./Cart.scss";
 const Cart = () => {
-  const [toggleValue, setToggleValue] = useState(false);
-  const [toggleSourceCart, setToggleSourceCart] = useState("cart");
-
-
+  const [toggleSourceCart, setToggleSourceCart, toggleValCart, setToggleValCart] = useToggleComponent('cart', false);
 
   const dispatch = useDispatch();
-
-  const handleSourceChange = () => {
-    setToggleValue(!toggleValue);
-    setToggleSourceCart(toggleSourceCart);
-    handleToggledComponent(toggleSourceCart, toggleValue, dispatch);
-  };
 
   const cart = useSelector(cartSelector);
   let totalItems = useSelector(cartTotalItemSelector);
@@ -46,17 +38,26 @@ const Cart = () => {
   return (
     <div className="cart-wrapper">
       <div className="cart-container">
-        <button
-          type="button"
-          className="cart-heading"
-          onClick={() => handleSourceChange(toggleSourceCart)}
+        <ToggledSourceController
+          toggleVal={toggleValCart}
+          toggleSource={toggleSourceCart}
+          setToggleVal={setToggleValCart}
+          setToggleSource={setToggleSourceCart}
         >
-          <AiOutlineLeft />
-          <span className="heading">
-            Back
-            <span className="cart-num-items">( {totalItems} items)</span>
-          </span>
-        </button>
+          <button
+            type="button"
+            className="cart-heading"
+            onClick={() => handleSourceChange()}
+          >
+            <AiOutlineLeft />
+            <span className="heading">
+              Back
+              <span className="cart-num-items">( {totalItems} items)</span>
+            </span>
+          </button>
+
+        </ToggledSourceController>
+
         {cart.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
@@ -65,9 +66,17 @@ const Cart = () => {
               href="/shop
             "
             >
-              <button type="button"  onClick={() => handleSourceChange(toggleSourceCart)} className="btn">
-                Continue Shopping
-              </button>
+              <ToggledSourceController
+                toggleVal={toggleValCart}
+                toggleSource={toggleSourceCart}
+                setToggleVal={setToggleValCart}
+                setToggleSource={setToggleSourceCart}
+              >
+                <button type="button" onClick={() => handleSourceChange()} className="btn">
+                  Continue Shopping
+                </button>
+
+              </ToggledSourceController>
             </Link>
           </div>
         )}

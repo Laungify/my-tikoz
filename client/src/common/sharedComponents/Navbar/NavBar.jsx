@@ -75,7 +75,7 @@ const NavBar = () => {
                             setToggleVal={setToggleValCart}
                             setToggleSource={setToggleSourceCart}
                         >
-                            <CartIcon toggle={() => handleSourceChange(toggleSourceCart)} />
+                            <CartIcon onClick={() => handleSourceChange()} />
                         </ToggledSourceController> <p>View Cart</p>
                     </div>
 
@@ -86,7 +86,7 @@ const NavBar = () => {
                             setToggleVal={setToggleAccountValModal}
                             setToggleSource={setToggleSourceAccountModal}
                         >
-                            <ProfilePic toggle={() => handleSourceChange('accountModal')}
+                            <ProfilePic onClick={() => handleSourceChange()}
                             />
                         </ToggledSourceController><p>Account</p>
 

@@ -17,10 +17,12 @@ import AppRoutes from "./routes/routes";
 import { Cart } from "./routes/pages";
 
 import "./App.scss";
+import { AccountModal } from "./common/sharedComponents";
+
 const App = () => {
   // make dispatched data global accross app 
   // the cart, account modals can be accessed gloabally 
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,6 +38,12 @@ const App = () => {
       {toggleComponentBooleanValueFromState === true &&
       toggleComponentNameFromState === "cart" ? (
         <Cart />
+      ) : (
+        ""
+      )}
+      {toggleComponentBooleanValueFromState === true &&
+      toggleComponentNameFromState === "accountModal" ? (
+        <AccountModal />
       ) : (
         ""
       )}

@@ -6,11 +6,11 @@ const BUTTON_TYPE_CLASSES = {
   auth: "auth",
   activity: "activity",
 };
-const Button = ({ children, classType, color, type,buttonType, ...otherProps }) => {
+const Button = ({ children, classType, color, type,buttonType, onClick,  ...otherProps }) => {
   // ...otherprops inside button like onClick, onHover, colors,  styling style={} etc
   return (
     <button
-      onClick={otherProps.toggle}
+      onClick={onClick}
       type={type}
       className={`button__wrapper button__wrapper-${classType} ${color} ${BUTTON_TYPE_CLASSES[buttonType]}`}
     >
