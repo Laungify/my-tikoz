@@ -2,7 +2,9 @@ import React from 'react'
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div className=''>
+      <h1>Hello I am admin</h1>
+    </div>
   )
 }
 

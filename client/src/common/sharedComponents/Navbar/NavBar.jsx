@@ -41,7 +41,6 @@ const NavBar = () => {
 
     return (
         <div className="navbar">
-            {console.log(currentUser)}
             <div className="navbar__logo">
                 <img className="app__navbar-logo" src={images.logo} alt="logo" />
             </div>

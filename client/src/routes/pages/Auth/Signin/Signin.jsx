@@ -107,7 +107,7 @@ const Signin = () => {
             <div>{formik.errors.password}</div>
           ) : null}
         </div>
-        <Button type="submit" classType="submit" toggle={() => formik.handleSubmit()}>
+        <Button type="submit" classType="submit" onClick={() => formik.handleSubmit()}>
           Submit
         </Button>{" "}
         <div className="reset_or-register" variant="primary">

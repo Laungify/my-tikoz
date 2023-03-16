@@ -106,7 +106,7 @@ const SingleEvent = () => {
                   >
                     <Button
                       classType="seat"
-                      toggle={() => handleSourceChange("selectSeat")}
+                      onClick={() => handleSourceChange("selectSeat")}
                     >
                       SELECT SEAT
                     </Button>
@@ -126,7 +126,7 @@ const SingleEvent = () => {
                   >
                     <Button
                       classType="seat"
-                      toggle={() => handleSourceChange("selectSeat")}
+                      onClick={() => handleSourceChange("selectSeat")}
                     >
                       SELECT SEAT
                     </Button>
@@ -146,7 +146,7 @@ const SingleEvent = () => {
                   >
                     <Button
                       classType="seat"
-                      toggle={() => handleSourceChange("selectSeat")}
+                      onClick={() => handleSourceChange("selectSeat")}
                     >
                       SELECT SEAT
                     </Button>
@@ -176,7 +176,7 @@ const SingleEvent = () => {
                   >
                     <Button
                       classType="seat"
-                      toggle={() => handleSourceChange("selectSeat")}
+                      onClick={() => handleSourceChange("selectSeat")}
                     >
                       SELECT SEAT
                     </Button>
@@ -196,7 +196,7 @@ const SingleEvent = () => {
                   >
                     <Button
                       classType="seat"
-                      toggle={() => handleSourceChange("selectSeat")}
+                      onClick={() => handleSourceChange("selectSeat")}
                     >
                       SELECT SEAT
                     </Button>
@@ -216,7 +216,7 @@ const SingleEvent = () => {
                   >
                     <Button
                       classType="seat"
-                      toggle={() => handleSourceChange("selectSeat")}
+                      onClick={() => handleSourceChange("selectSeat")}
                     >
                       SELECT SEAT
                     </Button>
@@ -231,7 +231,7 @@ const SingleEvent = () => {
               <Button
                 classType="activity"
                 color="red"
-                toggle={() => dispatch(addItemsToCart(event))}
+                onClick={() => dispatch(addItemsToCart(event))}
               >
                 ADD TO CART
               </Button>
@@ -244,7 +244,7 @@ const SingleEvent = () => {
                 setToggleVal={setToggleVal}
                 setToggleSource={setToggleSourceCart}
               >
-                <CartIcon toggle={() => handleSourceChange(toggleSourceCart)} />
+                <CartIcon onClick={() => handleSourceChange(toggleSourceCart)} />
               </ToggledSourceController>
             </div>
           </div>

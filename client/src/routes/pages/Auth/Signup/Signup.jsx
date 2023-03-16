@@ -190,7 +190,7 @@ const [loading, setisloading] = useState(false)
             <div>{formik.errors.confirmPassword}</div>
           ) : null}
         </div>
-        <Button type="submit" toggle={() => formik.handleSubmit()}>
+        <Button type="submit" onClick={() => formik.handleSubmit()}>
           Submit
         </Button>
         <div className="reset_or-register" variant="primary">
