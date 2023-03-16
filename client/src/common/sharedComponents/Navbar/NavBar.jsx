@@ -1,12 +1,15 @@
 import React from 'react'
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+
 
 
 import images from "../../../constants";
 import { Button, CartIcon, ToggledSourceController, ProfilePic, AccountModal } from "../";
 
-import { useToggleComponent } from '../../../common/customHooks';
+import { useToggleComponent, useCurrentUser } from '../../../common/customHooks';
+import { setDisplayedComponent } from '../../../features'
 
 import {
     selectUser
@@ -15,11 +18,30 @@ import { logout } from "../../../features"
 
 import './NavBar.scss';
 const NavBar = () => {
-    const [toggleSourceAccountModal, setToggleSourceAccountModal, toggleValAccountModal, setToggleAccountValModal, checker] = useToggleComponent('accountModal', true);
+    const [toggleSourceAccountModal, setToggleSourceAccountModal, toggleValAccountModal, setToggleAccountValModal, checker] 
+    = useToggleComponent('accountModal', true);
     const [toggleSourceCart, setToggleSourceCart, toggleValCart, setToggleValCart] = useToggleComponent('cart', true);
+
+    const { currentUser } = useCurrentUser()
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate()
+    const routeToAuth = (btnType) => {
+        if (btnType === 'signin') {
+            dispatch(setDisplayedComponent("signin"))
+            navigate('/auth')
+        }
+        else if (btnType === 'signup') {
+            dispatch(setDisplayedComponent("signup"))
+            navigate('/auth')
+        }
+
+    }
+
 
     return (
         <div className="navbar">
+            {console.log(currentUser)}
             <div className="navbar__logo">
                 <img className="app__navbar-logo" src={images.logo} alt="logo" />
             </div>
@@ -63,11 +85,7 @@ const NavBar = () => {
                     <li className="navbar__item"><a href="#" className="navbar__link">Services</a></li>
                     <li className="navbar__item"><a href="#" className="navbar__link">Contact</a></li>
                 </ul>
-                {/* <div className="navbar__cta">
-                    <button className="navbar__signin">Sign in</button>
-                    <button className="navbar__register">Register</button>
-                </div> */}
-                <div className="cart__container-wrapper">
+                {currentUser !== null ? <div className="cart__container-wrapper">
                     <div className="cart__container">
                         <ToggledSourceController
                             toggleVal={toggleValCart}
@@ -91,7 +109,12 @@ const NavBar = () => {
                         </ToggledSourceController><p>Account</p>
 
                     </div>
-                </div>
+                </div> : <div className="navbar__cta">
+                    <button onClick={() =>routeToAuth('signin')} className="navbar__signin">Sign in</button>
+                    <button onClick={() => routeToAuth('signup')} className="navbar__register">Register</button>
+                </div>}
+
+
 
             </div>
             {/* {checker === true ? <AccountModal /> : " "} */}

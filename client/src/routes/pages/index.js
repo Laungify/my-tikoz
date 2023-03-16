@@ -12,6 +12,7 @@ import Seats from "./Seats/Seats";
 import ModalOverlay from "./ModalOverlay/ModalOverlay";
 import Admin from "./Admin/Admin";
 import NoMatch from './NoMatch/NoMatch'
+import CheckOut from "./CheckOut/CheckOut";
 export {
   Auth,
   About,
@@ -27,4 +28,5 @@ export {
   Admin,
   ForgetPassword,
   NoMatch,
+  CheckOut
 };

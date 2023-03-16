@@ -1,6 +1,7 @@
-import React, {Fragment} from 'react'
-import { Auth, Admin, Contacts, About, DisplayActivities, AllEvents, SingleEvent, NoMatch } from "./pages";
+import React, { Fragment } from 'react'
+import { Auth, Admin, Contacts, About, DisplayActivities, AllEvents, SingleEvent, NoMatch, CheckOut } from "./pages";
 import { NavBar } from "../common/sharedComponents"
+import ProtectedRoutes from './ProtectedRoutes.jsx'
 
 
 
@@ -19,7 +20,8 @@ const AppRoutes = () => {
         <Route path="/auth" element={<Auth />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<ProtectedRoutes ><Admin /></ProtectedRoutes>} />
+        <Route path='/checkout' element={<ProtectedRoutes ><CheckOut /></ProtectedRoutes>} />
         <Route path="/" element={<DisplayActivities />} />
         <Route path="/events" element={<AllEvents />} />
         <Route path="/events/:id" element={<SingleEvent />} />
