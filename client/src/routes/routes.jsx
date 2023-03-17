@@ -20,7 +20,7 @@ const AppRoutes = () => {
         <Route path="/auth" element={<Auth />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<ProtectedRoutes ><Admin /></ProtectedRoutes>} />
         <Route path='/checkout' element={<ProtectedRoutes ><CheckOut /></ProtectedRoutes>} />
         <Route path="/" element={<DisplayActivities />} />
         <Route path="/events" element={<AllEvents />} />

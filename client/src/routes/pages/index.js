@@ -10,7 +10,7 @@ import SingleEvent from "./Events/SingleEvent/SingleEvent";
 import Cart from "./Cart/Cart";
 import Seats from "./Seats/Seats";
 import ModalOverlay from "./ModalOverlay/ModalOverlay";
-import Admin from "./Admin/Admin";
+import AdminDashboard from "./Admin/AdminDashboard";
 import NoMatch from './NoMatch/NoMatch'
 import CheckOut from "./CheckOut/CheckOut";
 export {
@@ -25,7 +25,7 @@ export {
   Cart,
   Seats,
   ModalOverlay,
-  Admin,
+  AdminDashboard,
   ForgetPassword,
   NoMatch,
   CheckOut

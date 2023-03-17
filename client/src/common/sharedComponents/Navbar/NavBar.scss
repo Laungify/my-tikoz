@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2em 0 0;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(126, 111, 111);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .nav__list-items {
@@ -38,7 +38,7 @@
 
   &__logo {
     img {
-      max-height: 150px;
+      height: 152px;
     }
   }
   &__cta {
@@ -50,7 +50,7 @@
         border: none;
         width: 100px;
         height: 50px;
-        background-color: #333;
+        background-color: rgb(73, 67, 67);
         color: #fff;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
@@ -118,7 +118,7 @@
         display: block;
         padding: 0.5rem;
         text-decoration: none;
-        color: #333;
+        color: #fff;
         font-size: 20px;
         transition: all 0.3s ease-in-out;
 
@@ -158,6 +158,9 @@
     .cart__container-wrapper {
       display: flex;
       gap: 20px;
+      p{
+        color: rgb(111, 197, 226);
+      }
     }
   }
 }
