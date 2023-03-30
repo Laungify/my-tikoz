@@ -1,4 +1,4 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
+import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { getDocs, serverTimestamp } from "firebase/firestore";
 import {
   getFirestore,
@@ -9,35 +9,35 @@ import {
   setDoc,
 } from "firebase/firestore";
 
-import { db } from "../../utils/firebase.utils";
+import { db } from "../../../common/firebase/firebase";
 
-export const productsServiceApi = createApi({
-  reducerPath: "productsServiceApi",
+ const ticketsServiceApi = createApi({
+  reducerPath: "ticketsServiceApi",
   baseQuery: fakeBaseQuery({ baseUrl: "/" }),
   endpoints: (builder) => ({
     fetchProducts: builder.query({
       queryFn: async () => {
         try {
-          const productRef = collection(db, "products");
+          const productRef = collection(db, "tickets");
           const querySnapshot = await getDocs(productRef);
-          let productItems = [];
+          let ticketItems = [];
           querySnapshot?.forEach((doc) => {
-            productItems.push({
+            ticketItems.push({
               id: doc.id,
               ...doc.data(),
             });
           });
-          return { data: productItems };
+          return { data: ticketItems };
         } catch (e) {
           return { error: e };
         }
       },
-      queryTag: "products",
+      queryTag: "tickets",
     }),
-    addProducts: builder.mutation({
+    addTickets: builder.mutation({
       async queryFn(data) {
         try {
-          const docRef = await addDoc(collection(db, "products"), {
+          const docRef = await addDoc(collection(db, "tickets"), {
             ...data,
             timestamp: serverTimestamp(),
           });
@@ -46,13 +46,13 @@ export const productsServiceApi = createApi({
           return { error: e };
         }
       },
-      invalidatesTags: ["products"],
+      invalidatesTags: ["tickets"],
     }),
   }),
 });
 
-export const { useFetchProductsQuery, useAddProductsMutation } =
-  productsServiceApi;
+export default ticketsServiceApi
+
 
 
 //   baseQuery is defined twice with different values. Remove one of them.

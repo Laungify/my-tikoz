@@ -4,6 +4,7 @@ import toggleComponentTruthySlice from "./slices/toggle/toggleComponentTruthySli
 import cartSlice from "./slices/cart/CartSlice.js";
 import userSlice from "./slices/users/userSlice.js";
 import seatSlice from "./slices/seatsSlice/seatSlice.js"
+import ticketsServiceApi from "./slices/ticketsService/ticketsServiceApi.js"
 
 export const toggleReducer = toggleSlice.reducer;
 export const { setDisplayedComponent } = toggleSlice.actions;
@@ -34,3 +35,7 @@ export const userReducer = userSlice.reducer;
 // seat selection
 export const { selectSeat, deselectSeat } = seatSlice.actions;
 export const seatReducer =  seatSlice.reducer;
+
+// tickets service api 
+export const { useFetchProductsQuery, useAddProductsMutation } =
+ticketsServiceApi;

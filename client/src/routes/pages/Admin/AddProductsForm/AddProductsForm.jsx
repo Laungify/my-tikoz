@@ -3,18 +3,18 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 
-import {useAddProductsMutation} from '../../../features/products/productsService'
-import { storage } from "../../../utils/firebase.utils";
+import {useAddProductsMutation} from '../../../../features'
+import { storage } from "../../../../common/firebase/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
 
-import './AddProductsForm.css'
+import './AddProductsForm.scss';
 
-export const AddProductsForm = () => {
+ const AddProductsForm = () => {
   const initialState = {
-    id: Math.random() * 100 ,
-    name: "",
+    // id: Math.random() * 100 ,
+    title: "",
     price: null,
   };
   const [data, setData] = useState(initialState);
@@ -128,3 +128,5 @@ const [addProducts] = useAddProductsMutation()
     
   );
 };
+
+export default AddProductsForm

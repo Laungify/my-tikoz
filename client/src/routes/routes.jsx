@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
-import { Auth, Admin, Contacts, About, DisplayActivities, AllEvents, SingleEvent, NoMatch, CheckOut } from "./pages";
+import { Auth, Contacts, About, DisplayActivities, AllEvents, SingleEvent, NoMatch, CheckOut, AdminDashboard } from "./pages";
 import { NavBar } from "../common/sharedComponents"
 import ProtectedRoutes from './ProtectedRoutes.jsx'
-
 
 
 // contains all routes exported as a component at the App level to be able to see browserHistory, links, etc
@@ -20,13 +19,15 @@ const AppRoutes = () => {
         <Route path="/auth" element={<Auth />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/admin" element={<ProtectedRoutes ><Admin /></ProtectedRoutes>} />
-        <Route path='/checkout' element={<ProtectedRoutes ><CheckOut /></ProtectedRoutes>} />
+        {/* <ProtectedRoutes exact path="/checkout" component={CheckOut} /> */}
+        <Route path="/admin" element={<ProtectedRoutes ><AdminDashboard /></ProtectedRoutes>} />
+        <Route path='/checkout' element={<ProtectedRoutes ><CheckOut /></ProtectedRoutes>} /> 
         <Route path="/" element={<DisplayActivities />} />
         <Route path="/events" element={<AllEvents />} />
         <Route path="/events/:id" element={<SingleEvent />} />
+        `
         <Route path="*" element={<NoMatch />} />
-      </Routes>
+      </Routes>  
     </Fragment>
 
   );

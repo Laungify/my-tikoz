@@ -13,6 +13,9 @@ import ModalOverlay from "./ModalOverlay/ModalOverlay";
 import AdminDashboard from "./Admin/AdminDashboard";
 import NoMatch from './NoMatch/NoMatch'
 import CheckOut from "./CheckOut/CheckOut";
+
+// admin pages 
+import AddProductsForm from "./Admin/AddProductsForm/AddProductsForm";
 export {
   Auth,
   About,

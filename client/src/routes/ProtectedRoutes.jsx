@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,redirect } from "react-router-dom";
 import { useCurrentUser } from "../common/customHooks";
 import { Button } from "../common/sharedComponents";
 
@@ -20,3 +20,21 @@ const ProtectedRoutes = ({ children }) => {
 };
 
 export default ProtectedRoutes;
+
+// import {Route, redirect} from 'react-router-dom'
+// import {useCurrentUser} from "../common/customHooks";
+
+// const  ProtectedRoutes = ({component:Component, ...rest}) => {
+//   const {currentUser} = useCurrentUser()
+
+//   return (
+//     <Route
+//       {...rest}
+//       render={props => {
+//         return currentUser ? <Component {...props} /> : redirect('/auth')
+//     }}>
+//     </Route>
+//   )
+// }
+
+// export default ProtectedRoutes
