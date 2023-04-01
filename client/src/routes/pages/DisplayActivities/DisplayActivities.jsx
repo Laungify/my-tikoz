@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,7 +10,8 @@ import {
 import { ModalOverlay } from "../";
 
 
-import {useToggleComponent} from '../../../common/customHooks';
+import { useToggleComponent ,handleToggledComponent,ReusableModal} from '../../../common/customHooks';
+
 
 
 import images from "../../../constants";
@@ -18,11 +19,22 @@ import images from "../../../constants";
 import "./DisplayActivities.scss";
 const DisplayActivities = () => {
   // moved the toggle implentation to a reusble service for future modals
-  const [toggleSourceModal,setToggleSourceModal,toggleValModal, setToggleValModal, checker] = useToggleComponent('activityModal', true);
+  const [toggleSourceModal, setToggleSourceModal, toggleValModal, setToggleValModal, checker] = useToggleComponent('activityModal', true);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedSource, setSelectedSource] = useState("activityModal");
+  const dispatch = useDispatch();
+
+  const handleToggle = (source) => {
+    setIsOpen(!isOpen);
+    setSelectedSource(source);
+    handleToggledComponent(source, isOpen, dispatch);
+  };
 
   return (
     <>
-      <div className="dispaly__activities-wrapper">
+      <div className="dispaly__activities-wrapper "  >
+
         <div className="dispaly__activities-title">
           <m.h1
             initial={{ opacity: 1, color: "#000" }}
@@ -142,10 +154,10 @@ const DisplayActivities = () => {
                   more outdoor recreations
                 </h4>
                 <ToggledSourceController
-                 toggleVal={toggleValModal}
-                 toggleSource={toggleSourceModal}
-                 setToggleVal={setToggleValModal}
-                 setToggleSource={setToggleSourceModal}
+                  toggleVal={toggleValModal}
+                  toggleSource={toggleSourceModal}
+                  setToggleVal={setToggleValModal}
+                  setToggleSource={setToggleSourceModal}
                 >
                   <Button
                     onClick={() => handleSourceChange("activityModal")}
@@ -157,7 +169,11 @@ const DisplayActivities = () => {
               </div>
             </div>
           </div>
-          {checker === true ? <ModalOverlay /> : " "}
+          <ReusableModal isOpen={isOpen} onClose={() => setIsOpen(false)} onOverlayClick={() => handleToggle(selectedSource)}> 
+    </ReusableModal>
+    {checker === true ? <ModalOverlay /> : " "}
+
+
         </div>
       </div>
       <Footer />

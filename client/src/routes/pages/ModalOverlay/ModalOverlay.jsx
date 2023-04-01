@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { handleToggledComponent } from "../../../common/customHooks";
+import { handleToggledComponent,ReusableModal } from "../../../common/customHooks";
 
 import "./ModalOverlay.scss";
 const ModalOverlay = () => {
@@ -13,15 +13,20 @@ const ModalOverlay = () => {
   const dispatch = useDispatch();
 
   const handleSourceChange = (e) => {
-    // stop the propagation of the click event when the user clicks inside the modal.
-    e.stopPropagation();
-        // This prevents the overlay from triggering the handleOverlayClick function when the user clicks inside the modal.
 
     setToggleValue(!toggleValue);
     setToggleSourceModal(toggleSourceModal);
-    handleToggledComponent(toggleSourceModal, toggleValue, dispatch);
+    handleToggledComponent(toggleValue,toggleSourceModal, dispatch);
   };
     // move this to a reusablecomponent 
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedSource, setSelectedSource] = useState("activityModal");
+  
+    const handleToggle = (source) => {
+      setIsOpen(!isOpen);
+      setSelectedSource(source);
+      handleToggledComponent(isOpen, source,dispatch);
+    };
 
 
   const navigate = useNavigate();
@@ -54,7 +59,6 @@ const ModalOverlay = () => {
 
 
   return (
-    <div className="modal-overlay__false" ref={modalOverlayRef}> 
     <div className="modal_overlay">
       <div className="modal_content">
         <h2>Login/Register or Continue Shopping</h2>
@@ -73,15 +77,14 @@ const ModalOverlay = () => {
           </button>
          </div> 
 
-          {/* <button
+          <button
           onClick={() => handleSourceChange(toggleSourceModal)}
           style={{ backgroundColor: "green" }}
         >
           Go Back
-        </button> */}
+        </button>
         </div>
       </div>
-    </div>
   );
 };
 
