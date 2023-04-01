@@ -8,11 +8,11 @@ const TokenRoute = require("./routes/mpesa/token");
 require("dotenv").config();
 const port = process.env.PORT
 
-const {createToken,stkPush}= require("./controllers/mpesa/token")
+// const {createToken,stkPush}= require("./controllers/mpesa/token")
 
-app.get ("/accessToken", (req, res) => {
-    createToken()
-}) 
+// app.get ("/accessToken", (req, res) => {
+//     createToken()
+// }) 
 
 
 app.listen(port, () => {
@@ -20,7 +20,7 @@ app.listen(port, () => {
 })
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 

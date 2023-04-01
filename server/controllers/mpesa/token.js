@@ -28,7 +28,7 @@ const createToken = async (req, res, next) => {
 };
 
 const stkPush = async (req, res) => {
-  const shortCode = 174379;
+  const shortCode = process.env.MPESA_TILLNUMBER
   const phone = req.body.phone.substring(1);
   const amount = req.body.amount;
   const passkey = process.env.MPESA_PASSKEY;
@@ -49,8 +49,8 @@ const stkPush = async (req, res) => {
     BusinessShortCode: shortCode,
     Password: password,
     Timestamp: timestamp,
-    // for paybill "TransactionType": "CustomerPayBillOnline",
-    TransactionType: "CustomerBuyGoodsOnline",
+    // for paybill "TransactionType": "CustomerPayBillOnline", CustomerBuyGoodsOnline
+    TransactionType: "CustomerPayBillOnline",
     Amount: amount,
     PartyA: `254${phone}`,
     PartyB: shortCode,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect  } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +12,11 @@ const ModalOverlay = () => {
   const [toggleSourceModal, setToggleSourceModal] = useState("activityModal");
   const dispatch = useDispatch();
 
-  const handleSourceChange = () => {
+  const handleSourceChange = (e) => {
+    // stop the propagation of the click event when the user clicks inside the modal.
+    e.stopPropagation();
+        // This prevents the overlay from triggering the handleOverlayClick function when the user clicks inside the modal.
+
     setToggleValue(!toggleValue);
     setToggleSourceModal(toggleSourceModal);
     handleToggledComponent(toggleSourceModal, toggleValue, dispatch);
@@ -35,7 +39,22 @@ const ModalOverlay = () => {
     handleSourceChange(toggleSourceModal);
   };
 
+  const modalOverlayRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalOverlayRef.current && !modalOverlayRef.current.contains(event.target)) {
+        handleSourceChange(toggleSourceModal);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [modalOverlayRef, toggleSourceModal]);
+
+
   return (
+    <div className="modal-overlay__false" ref={modalOverlayRef}> 
     <div className="modal_overlay">
       <div className="modal_content">
         <h2>Login/Register or Continue Shopping</h2>
@@ -52,12 +71,14 @@ const ModalOverlay = () => {
           >
             Continue Shopping without registering
           </button>
-          <button
+         </div> 
+
+          {/* <button
           onClick={() => handleSourceChange(toggleSourceModal)}
           style={{ backgroundColor: "green" }}
         >
           Go Back
-        </button>
+        </button> */}
         </div>
       </div>
     </div>
