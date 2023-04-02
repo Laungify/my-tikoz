@@ -55,6 +55,6 @@ export default ticketsServiceApi
 
 
 
-//   baseQuery is defined twice with different values. Remove one of them.
-// The addProducts mutation should return the added document's ID so that it can be used in the UI if needed. Modify the return value to include the ID of the added document.
-// It is recommended to include invalidatesTags in the addProducts mutation so that the cache can be updated after a new product is added. Use the queryTag that is set in fetchProducts query as the invalidation tag.
+//baseQuery is defined twice with different values. Remove one of them.
+//The addProducts mutation should return the added document's ID so that it can be used in the UI if needed. Modify the return value to include the ID of the added document.
+//It is recommended to include invalidatesTags in the addProducts mutation so that the cache can be updated after a new product is added. Use the queryTag that is set in fetchProducts query as the invalidation tag.

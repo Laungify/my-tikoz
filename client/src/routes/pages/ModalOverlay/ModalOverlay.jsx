@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { handleToggledComponent,ReusableModal } from "../../../common/customHooks";
+import { handleToggledComponent } from "../../../common/customHooks";
 
 import "./ModalOverlay.scss";
 const ModalOverlay = () => {
@@ -18,16 +18,6 @@ const ModalOverlay = () => {
     setToggleSourceModal(toggleSourceModal);
     handleToggledComponent(toggleValue,toggleSourceModal, dispatch);
   };
-    // move this to a reusablecomponent 
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedSource, setSelectedSource] = useState("activityModal");
-  
-    const handleToggle = (source) => {
-      setIsOpen(!isOpen);
-      setSelectedSource(source);
-      handleToggledComponent(isOpen, source,dispatch);
-    };
-
 
   const navigate = useNavigate();
   const routeToAuth_or_shop = (buttonType) => {
@@ -44,18 +34,7 @@ const ModalOverlay = () => {
     handleSourceChange(toggleSourceModal);
   };
 
-  const modalOverlayRef = useRef(null);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalOverlayRef.current && !modalOverlayRef.current.contains(event.target)) {
-        handleSourceChange(toggleSourceModal);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [modalOverlayRef, toggleSourceModal]);
+
 
 
   return (
@@ -77,12 +56,12 @@ const ModalOverlay = () => {
           </button>
          </div> 
 
-          <button
+          {/* <button
           onClick={() => handleSourceChange(toggleSourceModal)}
           style={{ backgroundColor: "green" }}
         >
           Go Back
-        </button>
+        </button> */}
         </div>
       </div>
   );

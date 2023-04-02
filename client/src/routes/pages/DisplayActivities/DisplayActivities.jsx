@@ -10,7 +10,7 @@ import {
 import { ModalOverlay } from "../";
 
 
-import { useToggleComponent ,handleToggledComponent,ReusableModal} from '../../../common/customHooks';
+import { useToggleComponent ,handleToggledComponent,ReusableModalHook} from '../../../common/customHooks';
 
 
 
@@ -22,7 +22,6 @@ const DisplayActivities = () => {
   const [toggleSourceModal, setToggleSourceModal, toggleValModal, setToggleValModal, checker] = useToggleComponent('activityModal', true);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedSource, setSelectedSource] = useState("activityModal");
   const dispatch = useDispatch();
 
   const handleToggle = (source) => {
@@ -74,19 +73,13 @@ const DisplayActivities = () => {
                   Reserve tables at your favorite restaurants for brunch,
                   dinner, breakfast etc{" "}
                 </h4>
-                <ToggledSourceController
-                  toggleVal={toggleValModal}
-                  toggleSource={toggleSourceModal}
-                  setToggleVal={setToggleValModal}
-                  setToggleSource={setToggleSourceModal}
-                >
+                
                   <Button
-                    onClick={() => handleSourceChange("activityModal")}
+                    onClick={() => setIsOpen(true)}
                     classType="create"
                   >
                     CREATE
                   </Button>
-                </ToggledSourceController>
               </div>
             </div>
             <div className="col__item">
@@ -100,19 +93,13 @@ const DisplayActivities = () => {
                   conferences, and book club meet-ups
                 </h4>
 
-                <ToggledSourceController
-                  toggleVal={toggleValModal}
-                  toggleSource={toggleSourceModal}
-                  setToggleVal={setToggleValModal}
-                  setToggleSource={setToggleSourceModal}
-                >
+                
                   <Button
-                    onClick={() => handleSourceChange("activityModal")}
+                    onClick={() => setIsOpen(true)}
                     classType="create"
                   >
                     CREATE
                   </Button>
-                </ToggledSourceController>
               </div>
             </div>
           </div>
@@ -128,19 +115,13 @@ const DisplayActivities = () => {
                   Relax at some of Kenya's luxurious, home-away-from-home
                   accommodations.
                 </h4>
-                <ToggledSourceController
-                  toggleVal={toggleValModal}
-                  toggleSource={toggleSourceModal}
-                  setToggleVal={setToggleValModal}
-                  setToggleSource={setToggleSourceModal}
-                >
+                
                   <Button
-                    onClick={() => handleSourceChange("activityModal")}
+                    onClick={() => setIsOpen(true)}
                     classType="create"
                   >
                     CREATE
                   </Button>
-                </ToggledSourceController>
               </div>
             </div>
             <div className="col__item">
@@ -153,25 +134,19 @@ const DisplayActivities = () => {
                   Have an adventure with skydiving, paragliding, park walks, and
                   more outdoor recreations
                 </h4>
-                <ToggledSourceController
-                  toggleVal={toggleValModal}
-                  toggleSource={toggleSourceModal}
-                  setToggleVal={setToggleValModal}
-                  setToggleSource={setToggleSourceModal}
-                >
+                
                   <Button
-                    onClick={() => handleSourceChange("activityModal")}
+                    onClick={() => setIsOpen(true)}
                     classType="create"
                   >
                     CREATE
                   </Button>
-                </ToggledSourceController>
               </div>
             </div>
           </div>
-          <ReusableModal isOpen={isOpen} onClose={() => setIsOpen(false)} onOverlayClick={() => handleToggle(selectedSource)}> 
-    </ReusableModal>
-    {checker === true ? <ModalOverlay /> : " "}
+          <ReusableModalHook isOpen={isOpen} onClickOutside={() => setIsOpen(false)} >
+    </ReusableModalHook>
+    {isOpen === true ? <ModalOverlay /> : " "}
 
 
         </div>
