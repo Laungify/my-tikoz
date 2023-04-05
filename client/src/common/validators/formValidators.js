@@ -3,14 +3,14 @@ const validateRegistatiion = (values) => {
 
   if (!values.firstname) {
     errors.firstname = "Required";
-  } 
+  }
   // else if (values.firstname.length > 15) {
   //   errors.firstname = "Must be 15 characters or less";
   // }
 
   if (!values.secondname) {
     errors.secondname = "Required";
-  } 
+  }
   // else if (values.secondname.length > 20) {
   //   errors.secondname = "Must be 20 characters or less";
   // }
@@ -29,7 +29,8 @@ const validateRegistatiion = (values) => {
   } else if (!/[A-Z]/.test(values.password)) {
     errors.password = "Password must contain at least one capital letter";
   } else if (!/[!@#$%^&*]/.test(values.password)) {
-    errors.password = "Password must contain at least one special character (!@#$%^&*)";
+    errors.password =
+      "Password must contain at least one special character (!@#$%^&*)";
   }
 
   if (!values.confirmPassword) {
@@ -39,7 +40,7 @@ const validateRegistatiion = (values) => {
   }
   if (!values.phone) {
     errors.phone = "Required";
-  } 
+  }
   // else {
   //   const countryCode = values.phone.substring(0, 2);
   //   const numericPart = values.phone.substring(2);
@@ -58,4 +59,3 @@ const validateRegistatiion = (values) => {
   return errors;
 };
 export default validateRegistatiion;
-

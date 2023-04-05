@@ -9,6 +9,10 @@ import hikingEvent from '../assets/hikingEvent.jpg';
 import marathonEvent from '../assets/marathon.jpg';
 import trolley from '../assets/trolley.png';
 import profile from '../assets/profile.png';
+import twitter from '../assets/svgs/twitter.svg'
+import facebook from '../assets/svgs/facebook.svg'
+import instagram from '../assets/svgs/instagram.svg'
+
 
 
 export default {
@@ -22,5 +26,8 @@ export default {
   hikingEvent,
   marathonEvent,
   trolley,
-  profile
+  profile,
+  twitter,
+  instagram,
+  facebook,
   };

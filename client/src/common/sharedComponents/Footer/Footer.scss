@@ -1,23 +1,54 @@
 .footer {
- height: 153px;
+  height: 153px;
   width: 100vw;
-  background-color: black;
+  background-color: whitesmoke;
   margin-top: 20px;
 
   .footer__wrapper {
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
 
-    p {
-      color: white;
-      width: 199px;
-      height: 14px;
-      margin-left: 0 0 15px 41px;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 1.5;
+    .footer__social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .footer__social-icon {
+
+         img {
+          width: 50px;
+          height: 50px;
+        }
+
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+
+    .footer__links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 24px;
+
+      a {
+        display: inline-block;
+        margin-right: 32px;
+        color: black;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: blue;
+        }
+      }
     }
   }
 }
@@ -26,8 +57,20 @@
   /* Your styles here */
   .footer {
     width: 100vw;
+
     .footer__wrapper {
-      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .footer__links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 16px;
+
+        a {
+          margin: 0 0 8px 0;
+        }
+      }
     }
   }
 }

@@ -30,12 +30,13 @@ const Contacts = () => {
   };
 
   return (
-    <div className="contacts_container">
+    <div className="contacts_container" ref={popupRef} onClick={handlePopupClick}>
       <Button classType='activity' onClick={() => setShowPopup(true)}>Open Popup</Button>
+      <div  className="modal-box">
+      </div>
+
       {showPopup && (
-        <div ref={popupRef} onClick={handlePopupClick}>
           <ModalOverlay />
-        </div>
       )}
     </div>
   );
