@@ -12,6 +12,8 @@ import profile from '../assets/profile.png';
 import twitter from '../assets/svgs/twitter.svg'
 import facebook from '../assets/svgs/facebook.svg'
 import instagram from '../assets/svgs/instagram.svg'
+import regularSeat from '../assets/regularSeat.png'
+import premiumSeat from '../assets/premiumSeat.png'
 
 
 
@@ -30,4 +32,6 @@ export default {
   twitter,
   instagram,
   facebook,
+  regularSeat,
+  premiumSeat
   };

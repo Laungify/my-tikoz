@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useParams } from "react-router-dom";
 
+import images from '../../../../constants'
+
 import {
   NavBar,
   EventsButtons,
@@ -91,7 +93,10 @@ const SingleEvent = () => {
             </p>
             <div className="select__seats">
               <div className="regular">
-                <h3>REGULAR</h3>
+              <div className="regular__title">
+                <img src={images.regularSeat} />
+                <h3>REGULAR SEAT</h3>
+                </div>
                 <div className="regular__info">
                   <p>DAY 1</p>
                   <div className="inc__dec-btn">
@@ -161,7 +166,12 @@ const SingleEvent = () => {
                 )}
               </div>
               <div className="regular">
-                <h3>VIP</h3>
+                <div className="regular__title">
+                <img src={images.premiumSeat} />
+                <h3>VIP SEAT</h3>
+                </div>
+                
+
                 <div className="regular__info">
                   <p>DAY 1</p>
                   <div className="inc__dec-btn">
