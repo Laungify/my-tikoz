@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,8 +10,7 @@ import {
 import { ModalOverlay } from "../";
 
 
-import { useToggleComponent ,handleToggledComponent,ReusableModalHook} from '../../../common/customHooks';
-
+import {useToggleComponent} from '../../../common/customHooks';
 
 
 import images from "../../../constants";
@@ -19,21 +18,11 @@ import images from "../../../constants";
 import "./DisplayActivities.scss";
 const DisplayActivities = () => {
   // moved the toggle implentation to a reusble service for future modals
-  const [toggleSourceModal, setToggleSourceModal, toggleValModal, setToggleValModal, checker] = useToggleComponent('activityModal', true);
-
-  const [isOpen, setIsOpen] = useState(false);
-  const dispatch = useDispatch();
-
-  const handleToggle = (source) => {
-    setIsOpen(!isOpen);
-    setSelectedSource(source);
-    handleToggledComponent(source, isOpen, dispatch);
-  };
+  const [toggleSourceModal,setToggleSourceModal,toggleValModal, setToggleValModal, checker] = useToggleComponent('activityModal', true);
 
   return (
     <>
-      <div className="dispaly__activities-wrapper "  >
-
+      <div className="dispaly__activities-wrapper">
         <div className="dispaly__activities-title">
           <m.h1
             initial={{ opacity: 1, color: "#000" }}
@@ -73,13 +62,19 @@ const DisplayActivities = () => {
                   Reserve tables at your favorite restaurants for brunch,
                   dinner, breakfast etc{" "}
                 </h4>
-                
+                <ToggledSourceController
+                  toggleVal={toggleValModal}
+                  toggleSource={toggleSourceModal}
+                  setToggleVal={setToggleValModal}
+                  setToggleSource={setToggleSourceModal}
+                >
                   <Button
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
                   </Button>
+                </ToggledSourceController>
               </div>
             </div>
             <div className="col__item">
@@ -93,13 +88,19 @@ const DisplayActivities = () => {
                   conferences, and book club meet-ups
                 </h4>
 
-                
+                <ToggledSourceController
+                  toggleVal={toggleValModal}
+                  toggleSource={toggleSourceModal}
+                  setToggleVal={setToggleValModal}
+                  setToggleSource={setToggleSourceModal}
+                >
                   <Button
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
                   </Button>
+                </ToggledSourceController>
               </div>
             </div>
           </div>
@@ -115,13 +116,19 @@ const DisplayActivities = () => {
                   Relax at some of Kenya's luxurious, home-away-from-home
                   accommodations.
                 </h4>
-                
+                <ToggledSourceController
+                  toggleVal={toggleValModal}
+                  toggleSource={toggleSourceModal}
+                  setToggleVal={setToggleValModal}
+                  setToggleSource={setToggleSourceModal}
+                >
                   <Button
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
                   </Button>
+                </ToggledSourceController>
               </div>
             </div>
             <div className="col__item">
@@ -134,21 +141,23 @@ const DisplayActivities = () => {
                   Have an adventure with skydiving, paragliding, park walks, and
                   more outdoor recreations
                 </h4>
-                
+                <ToggledSourceController
+                 toggleVal={toggleValModal}
+                 toggleSource={toggleSourceModal}
+                 setToggleVal={setToggleValModal}
+                 setToggleSource={setToggleSourceModal}
+                >
                   <Button
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => handleSourceChange("activityModal")}
                     classType="create"
                   >
                     CREATE
                   </Button>
+                </ToggledSourceController>
               </div>
             </div>
           </div>
-          <ReusableModalHook isOpen={isOpen} onClickOutside={() => setIsOpen(false)} >
-    </ReusableModalHook>
-    {isOpen === true ? <ModalOverlay /> : " "}
-
-
+          {checker === true ? <ModalOverlay /> : " "}
         </div>
       </div>
       <Footer />

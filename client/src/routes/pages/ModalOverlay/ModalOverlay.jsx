@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect  } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -12,12 +12,13 @@ const ModalOverlay = () => {
   const [toggleSourceModal, setToggleSourceModal] = useState("activityModal");
   const dispatch = useDispatch();
 
-  const handleSourceChange = (e) => {
-
+  const handleSourceChange = () => {
     setToggleValue(!toggleValue);
     setToggleSourceModal(toggleSourceModal);
-    handleToggledComponent(toggleValue,toggleSourceModal, dispatch);
+    handleToggledComponent(toggleSourceModal, toggleValue, dispatch);
   };
+    // move this to a reusablecomponent 
+
 
   const navigate = useNavigate();
   const routeToAuth_or_shop = (buttonType) => {
@@ -33,9 +34,6 @@ const ModalOverlay = () => {
     }
     handleSourceChange(toggleSourceModal);
   };
-
-
-
 
   return (
     <div className="modal_overlay">
@@ -54,16 +52,15 @@ const ModalOverlay = () => {
           >
             Continue Shopping without registering
           </button>
-         </div> 
-
-          {/* <button
+          <button
           onClick={() => handleSourceChange(toggleSourceModal)}
           style={{ backgroundColor: "green" }}
         >
           Go Back
-        </button> */}
+        </button>
         </div>
       </div>
+    </div>
   );
 };
 

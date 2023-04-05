@@ -3,7 +3,7 @@ import bed from '../assets/bed.jpg';
 import food from '../assets/food.jpg';
 import hiking from '../assets/hiking.jpg';
 import musicEvent from '../assets/musicEvent.jpg';
-import music from '../assets/music.jpg';
+import banner from '../assets/banner.jpg';
 import EventSafariRally from '../assets/safariRally.webp'
 import hikingEvent from '../assets/hikingEvent.jpg';
 import marathonEvent from '../assets/marathon.jpg';
@@ -17,7 +17,7 @@ export default {
   food,
   hiking,
   musicEvent,
-  music,
+  banner,
   EventSafariRally,
   hikingEvent,
   marathonEvent,

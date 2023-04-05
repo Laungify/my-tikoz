@@ -1,28 +1,37 @@
 import { useEffect, useRef } from "react";
 
-export function ReusableModalHook(props) {
+import './ReusableModalHook.scss';
+const ReusableModalHook = ({children, onClickOutside}) =>  {
     const ref = useRef(null);
-    const { onClickOutside } = props;
 
     useEffect(() => {
+        // const handleClickOutside = (event) => {
+        //     // checks whether the user clicks outside the modal
+        //     if (ref.current && !ref.current.contains(event.target)) {
+        //       // executed if a click event occurs outside of the modal
+        //       // check if the click event is not coming from the modal content
+        //       if (event.target.closest(".modal_content") === null) {
+        //         onClickOutside && onClickOutside();
+        //       }
+        //     }
+        //   };
         const handleClickOutside = (event) => {
-            // checks whether the user clicks on the tooltip (or its children) via the contains
-            if (ref.current && !ref.current.contains(event.target)) {
-                // executed if a click event occurs outside of the tooltip component instance
-                onClickOutside && onClickOutside();
-            }
+          if (ref.current && !ref.current.contains(event.target)) {
+            onClickOutside && onClickOutside();
+          } 
         };
+        
+          
         document.addEventListener("click", handleClickOutside, true);
         return () => {
             document.removeEventListener("click", handleClickOutside, true);
         };
     }, [onClickOutside]);
 
-    if (!props.isOpen) return null;
 
     return (
         <div ref={ref} className="modal-box">
-            {props.children}
+            {children}
         </div>
     );
 }

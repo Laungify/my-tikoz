@@ -79,10 +79,26 @@ const NavBar = () => {
 
             <div className="navbar__menu">
                 <ul className="navbar__list">
-                    <li className="navbar__item"><a href="#" className="navbar__link">Home</a></li>
-                    <li className="navbar__item"><a href="#" className="navbar__link">About</a></li>
-                    <li className="navbar__item"><a href="#" className="navbar__link">Services</a></li>
-                    <li className="navbar__item"><a href="#" className="navbar__link">Contact</a></li>
+                <li>
+                        <Link to="/">
+                            <div className="navbar__link">Home</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about">
+                            <div className="navbar__link">About</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/services">
+                            <div className="navbar__link">Services</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contacts">
+                            <div className="navbar__link">Contact</div>
+                        </Link>
+                    </li>
                 </ul>
                 {currentUser !== null ? <div className="cart__container-wrapper">
                     <div className="cart__container">
