@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #727aaa;
+    // background-color: #727aaa;
     margin: 0 40px 0;
     border-radius: 50px;
     -webkit-border-radius: 50px;
@@ -38,7 +38,7 @@
     -o-border-radius: 50px;
 
     img {
-      width: 1000px;
+      width: 100%;
       height: 500px;
     }
   }
