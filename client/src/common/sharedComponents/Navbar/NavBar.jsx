@@ -59,8 +59,6 @@ const NavBar = () => {
                         </Button>
                     </Link>
                 </li>
-            </div>
-            <div className="nav__list-items">
                 <li>
                     <Link to="/sleep">
                         <Button classType="activity" color="blue">
@@ -76,7 +74,7 @@ const NavBar = () => {
                     </Link>
                 </li>
             </div>
-
+            
             <div className="navbar__menu">
                 <ul className="navbar__list">
                 <li>

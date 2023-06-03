@@ -7,7 +7,6 @@ const TokenRoute = require("./routes/mpesa/token");
 
 require("dotenv").config();
 const port = process.env.PORT
-
 // const {createToken,stkPush}= require("./controllers/mpesa/token")
 
 // app.get ("/accessToken", (req, res) => {
@@ -29,3 +28,5 @@ app.get('/', (req, res) => {
     res.send(`<h1>Hello from server</h1>`)
 })
 app.use("/token", TokenRoute);
+
+

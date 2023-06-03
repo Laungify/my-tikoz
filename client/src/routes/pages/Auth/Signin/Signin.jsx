@@ -75,11 +75,11 @@ const Signin = () => {
       className="signin__wrapper"
     >
       <Logo />
-      <h1>WELCOME TO TIKO </h1>
+      {/* <h1>WELCOME TO TIKO </h1>
       <h1>ZANGU</h1>
       <h3>CURATING YOUR BEST </h3>
       <h3>EXPERIENCES ALL UNDER ONE</h3>
-      <h3> HUT</h3>
+      <h3> HUT</h3> */}
       <form onSubmit={formik.handleSubmit}>
         <input
           id="email"
@@ -107,15 +107,15 @@ const Signin = () => {
             <div>{formik.errors.password}</div>
           ) : null}
         </div>
-        <Button type="submit" classType="submit" onClick={() => formik.handleSubmit()}>
-          Submit
+        <Button type="submit" classType="activity" color="green" onClick={() => formik.handleSubmit()}>
+          LOG IN
         </Button>{" "}
         <div className="reset_or-register" variant="primary">
           <h2 className="reset">          Forgot Password? Reset
           </h2>
-            <h2 className="register" onClick={() => dispatch(setDisplayedComponent("signup"))}>
-              Not a user? Please Register
-            </h2>
+          <h2 className="register" onClick={() => dispatch(setDisplayedComponent("signup"))}>
+            Not a user? Sign up
+          </h2>
         </div>
         <Toaster position="center" reverseOrder={true} />
       </form>

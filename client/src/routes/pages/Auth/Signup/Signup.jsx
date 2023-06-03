@@ -84,11 +84,11 @@ const [loading, setisloading] = useState(false)
       className="signin__wrapper"
     >
       <Logo />
-      <h1>WELCOME TO TIKO </h1>
+      {/* <h1>WELCOME TO TIKO </h1>
       <h1>ZANGU</h1>
       <h3>CURATING YOUR BEST </h3>
       <h3>EXPERIENCES ALL UNDER ONE</h3>
-      <h3> HUT</h3>
+      <h3> HUT</h3> */}
       { loading ? <h3>Loading...</h3> : 
       <form onSubmit={formik.handleSubmit}>
         <div className="name__wrapper">
@@ -190,7 +190,7 @@ const [loading, setisloading] = useState(false)
             <div>{formik.errors.confirmPassword}</div>
           ) : null}
         </div>
-        <Button type="submit" onClick={() => formik.handleSubmit()}>
+        <Button type="submit" classType="activity" color="green" onClick={() => formik.handleSubmit()}>
           Submit
         </Button>
         <div className="reset_or-register" variant="primary">

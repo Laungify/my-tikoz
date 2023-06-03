@@ -95,7 +95,7 @@ const SingleEvent = () => {
               <div className="regular">
               <div className="regular__title">
                 <img src={images.regularSeat} />
-                <h3>REGULAR SEAT</h3>
+                <h3>REGULAR</h3>
                 </div>
                 <div className="regular__info">
                   <p>DAY 1</p>
@@ -168,7 +168,7 @@ const SingleEvent = () => {
               <div className="regular">
                 <div className="regular__title">
                 <img src={images.premiumSeat} />
-                <h3>VIP SEAT</h3>
+                <h3>VIP</h3>
                 </div>
                 
 

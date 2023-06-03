@@ -1,6 +1,5 @@
 .signin__wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
 
   h1,
@@ -52,18 +51,18 @@
     height: 50px;
     width: 500px;
     color: #fff3f3;
+    font-size: 28px;
     margin: 8px 0 15px 0;
     box-sizing: border-box;
     border: none;
-    border-radius: 12px;
-    border-bottom: 2px solid #ccc;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+    border-radius: 0%;
+    -webkit-border-radius: 0%;
+    -moz-border-radius: 0%;
+    -ms-border-radius: 0%;
+    -o-border-radius: 0%;
   }
-  .brown {
-    background-color: #120404;
+  .green {
+    background-color: #46ea0d;
   }
   .reset_or-register {
     display: flex;
@@ -87,7 +86,7 @@
       display: flex;
       height: 50px;
       width: 380px;
-  
+
       input {
         height: 50px;
         width: 380px;
@@ -103,7 +102,8 @@
       }
     }
 
-    button,.terms_conditions{
+    button,
+    .terms_conditions {
       width: 380px;
     }
     .reset_or-register {
