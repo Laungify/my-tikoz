@@ -76,7 +76,7 @@ const NavBar = () => {
             </div>
             
             <div className="navbar__menu">
-                <ul className="navbar__list">
+                {/* <ul className="navbar__list">
                 <li>
                         <Link to="/">
                             <div className="navbar__link">Home</div>
@@ -97,7 +97,7 @@ const NavBar = () => {
                             <div className="navbar__link">Contact</div>
                         </Link>
                     </li>
-                </ul>
+                </ul> */}
                 {currentUser !== null ? <div className="cart__container-wrapper">
                     <div className="cart__container">
                         <ToggledSourceController
